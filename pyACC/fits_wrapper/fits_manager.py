@@ -1,6 +1,8 @@
 from astropy.io import fits
 import numpy as np
 
+from ..helpers.logger import Logger
+
 class FitsManager:
     "class to merge fits_file using astropy.io.fits module"
     #define the constructure:
@@ -25,3 +27,6 @@ class FitsManager:
         "get the data of the fits file"
         return self.hdulist[hdu_index].data
     
+    def close(self):
+        "close the fits file"
+        self.hdulist.close()
