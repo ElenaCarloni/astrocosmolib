@@ -23,4 +23,4 @@ class Integrate:
             return self.quadrature(a, b, **kwargs)
         else:
             raise ValueError('Unknown integration method. Use "trapezoidal" or "quad".')
-        
+         

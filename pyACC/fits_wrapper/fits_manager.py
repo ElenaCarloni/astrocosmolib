@@ -29,4 +29,4 @@ class FitsManager:
     
     def close(self):
         "close the fits file"
-        self.hdulist.close()
+        self.hdulist.close() 

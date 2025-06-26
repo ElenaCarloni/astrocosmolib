@@ -1,5 +1,9 @@
 import numpy as np
+<<<<<<< Exam
+from scipy.integrate import quad 
+=======
 from scipy.integrate import quad
+>>>>>>> main
 from scipy.constants import c as speed_of_light
 from pyACC.integrate.integration import Integrate
 
@@ -85,3 +89,18 @@ class CosmologicalDistances:
             return ((speed_of_light / 1.e3 * z) * (self.comoving_distance(z, *cosmo_pars, **integ_args)**2 / self.hubble_function(z, *cosmo_pars)))**(1./3)
         else:
             return ((speed_of_light / 1.e3 * z) * (self.comoving_distance(z, *cosmo_pars, **integ_args)**2 / self.hubble_function(z, *self.cosmo_pars)))**(1./3)
+        
+    def transverse_comoving_distance(self, z, *cosmo_pars, **integ_args):
+        if len(cosmo_pars) != 0:
+            return self.comoving_distance(z, *cosmo_pars, **integ_args)
+        else:
+            return self.comoving_distance(z, *self.cosmo_pars, **integ_args)
+    
+    def isotropic_volume_distance(self, z, *cosmo_pars, **integ_args):
+        if len(cosmo_pars) != 0:
+            dm = self.transverse_comoving_distance(z, *cosmo_pars, **integ_args)
+            dh = self.hubble_distance(z, *cosmo_pars, **integ_args)
+        else:
+            dm = self.transverse_comoving_distance(z, *self.cosmo_pars, **integ_args)
+            dh = self.hubble_distance(z, *self.cosmo_pars, **integ_args)
+        return (z * dm**2 * dh)**(1./3)
