@@ -1,9 +1,5 @@
 import numpy as np
-<<<<<<< Exam
-from scipy.integrate import quad 
-=======
 from scipy.integrate import quad
->>>>>>> main
 from scipy.constants import c as speed_of_light
 from pyACC.integrate.integration import Integrate
 
