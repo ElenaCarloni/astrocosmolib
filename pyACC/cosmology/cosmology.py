@@ -14,7 +14,7 @@ class LambdaCDM:
             self.Omega_radiation * (1 + z)**4 +
             self.Omega_k * (1 + z)**2 +
             self.Omega_Lambda
-        )
+        ) 
     
     def H(self, z):
         return self.H0 * self.E(z)

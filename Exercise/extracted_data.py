@@ -12,6 +12,7 @@ data_simplified = [
     ["Lya", 2.330, "31.267 ± 0.256", "38.988 ± 0.531", "8.632 ± 0.101"],
 ]
 
+
 # Definire le nuove intestazioni di colonna
 columns_simplified = ["Tracer", "z_eff", "D_V / r_d", "D_M / r_d", "D_H / r_d"]
 df_simplified = pd.DataFrame(data_simplified, columns=columns_simplified)

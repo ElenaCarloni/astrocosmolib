@@ -1,1 +1,1 @@
-from .fits_manager import FitsManager
+from .fits_manager import FitsManager 

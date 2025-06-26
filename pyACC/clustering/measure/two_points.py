@@ -1,5 +1,5 @@
 import numpy as np
-import Corrfunc
+import Corrfunc 
 
 class TwoPointIsotropic:
 
@@ -123,7 +123,7 @@ class TwoPointIsotropic:
         
         if (weights2 is not None):
             RR *= self.RR['weightavg']
-            Nr = np.sum(weights1)**2
+            Nr = np.sum(weights2)**2
 
         if (weights1 is not None) and (weights2 is not None):
             DR *= self.DR['weightavg']
